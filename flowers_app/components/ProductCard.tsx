@@ -1,14 +1,15 @@
 import { Image, StyleSheet, Text, View } from "react-native";
+import {Item} from "../types/item"
 
 
 
-export default function ProductCard({item}) {
+export default function ProductCard({item}: {item: Item}) {
 
 
 
   return (
     <View style={styles.card}>
-      <Image source={{uri: item.image}} style={styles.img}/>
+      <Image source={item.image} style={styles.img}/>
       <Text style={styles.name}>{item.name}</Text>
       <Text style={styles.price}>R$ {item.price.toFixed(2)}</Text>
     </View>
@@ -26,9 +27,12 @@ const styles = StyleSheet.create({
     width: "48%",
   },
   img: {
-    width: 100,
-    height: 100,
-    borderRadius: 10,
+    width: 250,
+    height: 80,
+    borderRadius: 80,
+    resizeMode: "contain",
+    borderCurve:"circular",
+    
   },
   name: {
     fontSize: 12,
