@@ -4,13 +4,16 @@ import { Stack } from "expo-router";
 import { ScrollView, StyleSheet, View, Text, FlatList } from "react-native";
 import { items } from "@/types/items";
 
-export default function HomeScreen() {
-   
 
+export default function HomeScreen() {
 
   return (
-
-    <FlatList 
+    <>
+    
+    
+     <Stack.Screen options={{headerShown: false}}/>
+      
+     <FlatList 
      
       data={items}
       numColumns={2}
@@ -20,6 +23,7 @@ export default function HomeScreen() {
       keyExtractor={(item, index) => index.toString()}
       renderItem={({item}) => <ProductCard item={item} />}
     />
+    </>
 
 
     
@@ -31,27 +35,22 @@ const styles = StyleSheet.create({
 
 
   row:{
-    gap: 12,
-    padding: 12,
-
+    gap: 15,
+    padding: 10,
   },
+
 
   conteine: {
   flexDirection: "row",
   flexWrap: "wrap",
   justifyContent: "space-between",
-  paddingBottom: 20,
-  padding: 16,
-  gap: 16,
-  
-  
-
-  
+  paddingBottom: 40,
+  padding: 20,  
 },
 
  background:{
    flex: 1,
-   backgroundColor: "#f134863c"
+   backgroundColor: "#f1348631"
  }
 
 
