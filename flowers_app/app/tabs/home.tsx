@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
  background:{
    flex: 1,
-   backgroundColor: "#f1348631"
+   backgroundColor: "#ffffffff"
  }
 
 

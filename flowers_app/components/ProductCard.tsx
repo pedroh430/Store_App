@@ -20,23 +20,23 @@ export default function ProductCard({item}: {item: Item}) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor:"#e56a9bff",
+    backgroundColor:"#ffffffca",
     padding: 5,
     gap:2,
-    borderRadius: 30,
-    marginBottom: -5,
+    elevation:5,
+    marginBottom: 5,
     alignItems:"center",
-    elevation: 3,
     width: "48%",
+    height: "100%",
     
+
   },
   img: {
     width: 250,
     height: 80,
     borderRadius: 80,
-    resizeMode: "contain",
-    borderCurve:"circular",
-    
+    resizeMode: "center",
+   
   },
   name: {
     fontSize: 12,
@@ -54,9 +54,7 @@ const styles = StyleSheet.create({
   info:{
     backgroundColor: "white",
     width: "100%",
-    borderRadius: 30,
-    marginTop: 10
-    
+    marginTop: 10,
   },
     
   }

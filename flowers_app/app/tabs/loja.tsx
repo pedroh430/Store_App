@@ -1,11 +1,19 @@
 import { View } from "react-native";
+import { Stack } from "expo-router";
 
 export default function LojaScreen(){
 
     return(
+        <>
+        <Stack.Screen options={{headerShown: false}}/>
+       
+        
+        </>
 
-        <View style={{ flex: 1, backgroundColor: "#f134863c" }}></View>
-    )
+
+    );
+
+       
     
     
 }
