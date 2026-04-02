@@ -1,9 +1,10 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, Button } from "react-native";
 import {Item} from "../types/item"
 
 
 
 export default function ProductCard({item}: {item: Item}) {
+  
 
 
 
@@ -24,19 +25,15 @@ const styles = StyleSheet.create({
     padding: 5,
     gap:2,
     elevation:5,
-    marginBottom: 5,
     alignItems:"center",
     width: "48%",
     height: "100%",
-    
-
   },
   img: {
     width: 250,
     height: 80,
     borderRadius: 80,
     resizeMode: "center",
-   
   },
   name: {
     fontSize: 12,
@@ -52,7 +49,7 @@ const styles = StyleSheet.create({
     textAlign:"center",
   },
   info:{
-    backgroundColor: "white",
+    backgroundColor:"white",
     width: "100%",
     marginTop: 10,
   },

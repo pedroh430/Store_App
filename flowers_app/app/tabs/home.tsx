@@ -5,7 +5,10 @@ import { ScrollView, StyleSheet, View, Text, FlatList } from "react-native";
 import { items } from "@/types/items";
 
 
+
 export default function HomeScreen() {
+
+
 
   return (
     <>
@@ -41,8 +44,6 @@ const styles = StyleSheet.create({
 
 
   conteine: {
-  flexDirection: "row",
-  flexWrap: "wrap",
   justifyContent: "space-between",
   paddingBottom: 40,
   padding: 20,  
