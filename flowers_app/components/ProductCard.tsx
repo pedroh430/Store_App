@@ -21,13 +21,14 @@ export default function ProductCard({item}: {item: Item}) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor:"#ffffffca",
+    backgroundColor:"#ffffffff",
     padding: 5,
     gap:2,
     elevation:5,
     alignItems:"center",
     width: "48%",
     height: "100%",
+    borderRadius: 20,
   },
   img: {
     width: 250,
@@ -36,9 +37,9 @@ const styles = StyleSheet.create({
     resizeMode: "center",
   },
   name: {
-    fontSize: 12,
+    fontSize: 15,
     fontWeight: "bold",
-    marginTop: 10,
+    marginTop: 2,
     textAlign: "center",
   },
   price: {
@@ -49,9 +50,10 @@ const styles = StyleSheet.create({
     textAlign:"center",
   },
   info:{
-    backgroundColor:"white",
+    backgroundColor: "#e56a9b1d",
     width: "100%",
     marginTop: 10,
+    borderRadius: 20,
   },
     
   }
