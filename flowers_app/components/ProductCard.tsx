@@ -1,9 +1,12 @@
-import { Image, StyleSheet, Text, View, Button } from "react-native";
+import { Image, StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
 import {Item} from "../types/item"
+import { useCart } from "@/types/cartContent";
 
 
 
 export default function ProductCard({item}: {item: Item}) {
+
+  const {addToCart}= useCart();
   
 
 
@@ -15,6 +18,9 @@ export default function ProductCard({item}: {item: Item}) {
         <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.price}>R$ {item.price.toFixed(2)}</Text>
       </View>
+      <TouchableOpacity style={styles.button} onPress={() => addToCart(item)}>
+        <Text style={styles.buttonText}> Adicionar</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -55,6 +61,18 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius: 20,
   },
+  button: {
+    marginTop: 8,
+    backgroundColor: "#e91e8c",
+    padding: 6,
+    borderRadius: 8,
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#fff",
+    fontWeight: "bold",
+  },
+});
     
-  }
-);
+  
+
