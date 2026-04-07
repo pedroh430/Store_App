@@ -1,3 +1,4 @@
+import { CartProvider } from "@/types/cartContent";
 import { HeaderShownContext } from "@react-navigation/elements";
 import { Stack } from "expo-router";
 
@@ -6,11 +7,12 @@ import { Stack } from "expo-router";
 
 export default function TabsLayout() {
   return(
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="index" />
-      <Stack.Screen name="profile" />
-    </Stack>
-   
+   <CartProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="profile" />
+      </Stack>
+    </CartProvider>
       
     
     
