@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   img: {
     width: 250,
     height: 80,
-    borderRadius: 80,
+    borderRadius: 3,
     resizeMode: "center",
   },
   name: {
@@ -56,14 +56,14 @@ const styles = StyleSheet.create({
     textAlign:"center",
   },
   info:{
-    backgroundColor: "#e56a9b1d",
+    backgroundColor: "#c7c3c535",
     width: "100%",
     marginTop: 10,
     borderRadius: 20,
   },
   button: {
     marginTop: 8,
-    backgroundColor: "#e91e8c",
+    backgroundColor: "#e56a9b83",
     padding: 6,
     borderRadius: 8,
     alignItems: "center",
