@@ -1,10 +1,14 @@
-import { View, Text, FlatList, Image,TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, FlatList, Image,TouchableOpacity, StyleSheet, TextInput } from "react-native";
 import { Stack,} from "expo-router";
 import { useCart } from "@/types/cartContent";
+import {useState} from 'react';
 
 
 export default function LojaScreen(){
-    const {cart, removeFromCart, getTotal} = useCart();   
+    const {cart, removeFromCart, getTotal} = useCart();  
+    const [text, setText] = useState('');
+
+
 
     if(cart.length ===0){
         return(
@@ -38,6 +42,15 @@ export default function LojaScreen(){
           </View>                                                               
           )}
          />
+          <View style={styles.container2}>
+             <TextInput
+                style={styles.input}
+                placeholder="Type here..."
+                onChangeText={newText => setText(newText)}
+                defaultValue={text}
+              />
+              <Text>You typed: {text}</Text>
+           </View>
       <View style={styles.total}>
         <Text style={styles.totalText}>Total: R$ {getTotal().toFixed(2)}</Text>
       </View>
@@ -67,4 +80,5 @@ const styles = StyleSheet.create({
   total: { padding: 16, borderTopWidth: 1, borderColor: "#eee",  },
   totalText: { fontSize: 18, fontWeight: "bold", textAlign: "right" },
   buttonremove:{backgroundColor:"red", borderRadius:10,}
+  
 });
