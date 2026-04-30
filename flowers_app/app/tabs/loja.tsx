@@ -6,14 +6,13 @@ import {useState} from 'react';
 
 export default function LojaScreen(){
     const {cart, removeFromCart, getTotal} = useCart();  
-    const [text, setText] = useState('');
-
+    const [text, setText] = useState("");
 
 
     if(cart.length ===0){
         return(
             <View style={styles.empty}>
-                <Text style={styles.emptyText}>Seu cariinho esta vazio</Text>
+                <Text style={styles.emptyText}>Seu carinho esta vazio</Text>
 
             </View>
         )
@@ -42,23 +41,21 @@ export default function LojaScreen(){
           </View>                                                               
           )}
          />
-          <View style={styles.container2}>
-             <TextInput
-                style={styles.input}
-                placeholder="Type here..."
-                onChangeText={newText => setText(newText)}
-                defaultValue={text}
-              />
-              <Text>You typed: {text}</Text>
-           </View>
+         
       <View style={styles.total}>
         <Text style={styles.totalText}>Total: R$ {getTotal().toFixed(2)}</Text>
+        <TextInput
+           style={{height: 40}}
+           placeholder="Digite a Taxa!"
+           onChange={Text => setText(text)}
+           defaultValue={text}
+        />
+        <Text style={{padding:10, fontSize:10}}>
+          {text.split(' ').map((word) => word).join(' ')}
+        </Text>
+          
       </View>
      </View>
-  
-
-        
-        
         
         </>
     );
