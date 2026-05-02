@@ -3,7 +3,7 @@ ___
 # Front-end
 - Creating interface 
 - Create window for add items.(In my home).
-- Create shop for my items
+- Create shop for my item
 
 ---
 # Back-end 
