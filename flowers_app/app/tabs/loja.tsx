@@ -44,16 +44,6 @@ export default function LojaScreen(){
          
       <View style={styles.total}>
         <Text style={styles.totalText}>Total: R$ {getTotal().toFixed(2)}</Text>
-        <TextInput
-           style={{height: 40}}
-           placeholder="Digite a Taxa!"
-           onChange={Text => setText(text)}
-           defaultValue={text}
-        />
-        <Text style={{padding:10, fontSize:10}}>
-          {text.split(' ').map((word) => word).join(' ')}
-        </Text>
-          
       </View>
      </View>
         
