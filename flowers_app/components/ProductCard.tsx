@@ -37,10 +37,11 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   img: {
-    width: 250,
+    width: 100,
     height: 80,
-    borderRadius: 3,
-    resizeMode: "center",
+    borderRadius: 10,
+    
+    
   },
   name: {
     fontSize: 15,
