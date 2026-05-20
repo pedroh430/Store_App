@@ -1,25 +1,34 @@
-import { Image, StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
-import {Item} from "../types/item"
+import {Image,StyleSheet,Text,View,TouchableOpacity,} from "react-native";
+import { Item } from "../types/item";
 import { useCart } from "@/types/cartContent";
+import { Ionicons } from "@expo/vector-icons";
 
-
-
-export default function ProductCard({item}: {item: Item}) {
-
-  const {addToCart}= useCart();
-  
-
-
+export default function ProductCard({ item }: { item: Item }) {
+  const { addToCart } = useCart();
 
   return (
     <View style={styles.card}>
-      <Image source={item.image} style={styles.img}/>
+      <Image source={{ uri: item.imgUrl }} style={styles.img} />
+
       <View style={styles.info}>
         <Text style={styles.name}>{item.name}</Text>
-        <Text style={styles.price}>R$ {item.price.toFixed(2)}</Text>
+
+        <Text style={styles.price}>
+          R$ {item.price.toFixed(2)}
+        </Text>
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => addToCart(item)}>
-        <Text style={styles.buttonText}> Adicionar</Text>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => addToCart(item)}
+      >
+        <View style={styles.buttonContent}>
+          <Ionicons name="cart" size={18} color="#fff" />
+
+          <Text style={styles.buttonText}>
+            Adicionar
+          </Text>
+        </View>
       </TouchableOpacity>
     </View>
   );
@@ -27,53 +36,82 @@ export default function ProductCard({item}: {item: Item}) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor:"#ffffffff",
-    padding: 5,
-    gap:2,
-    elevation:5,
-    alignItems:"center",
-    width: "48%",
-    height: "100%",
-    borderRadius: 20,
+    backgroundColor: "#fff",
+    width: 155,
+
+    padding: 12,
+    marginBottom: 18,
+
+    borderRadius: 24,
+
+    alignItems: "center",
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
+
+    shadowOpacity: 0.08,
+    shadowRadius: 20,
+
+    elevation: 5,
   },
+
   img: {
-    width: 100,
-    height: 80,
-    borderRadius: 10,
-    
-    
-  },
-  name: {
-    fontSize: 15,
-    fontWeight: "bold",
-    marginTop: 2,
-    textAlign: "center",
-  },
-  price: {
-    fontSize: 12,
-    color: "#000000ff",
-    marginTop: 5,
-    fontWeight: "bold",
-    textAlign:"center",
-  },
-  info:{
-    backgroundColor: "#c7c3c535",
     width: "100%",
-    marginTop: 10,
-    borderRadius:10,
+    height: 125,
+
+    borderRadius: 16,
   },
-  button: {
-    marginTop: 8,
-    backgroundColor: "#e56a9b83",
-    padding: 6,
-    borderRadius: 8,
+
+  info: {
+    marginTop: 12,
+    width: "100%",
     alignItems: "center",
   },
+
+  name: {
+    fontSize: 16,
+    fontWeight: "600",
+
+    color: "#222",
+
+    textAlign: "center",
+  },
+
+  price: {
+    fontSize: 22,
+    fontWeight: "700",
+
+    color: "#8B4513",
+
+    marginTop: 6,
+  },
+
+  button: {
+    backgroundColor: "#ff5fa2df",
+
+    width: "100%",
+
+    paddingVertical: 10,
+
+    borderRadius: 14,
+
+    alignItems: "center",
+
+    marginTop: 14,
+  },
+
+  buttonContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
+
   buttonText: {
     color: "#fff",
-    fontWeight: "bold",
+    fontWeight: "700",
+    fontSize: 14,
   },
 });
-    
-  
-

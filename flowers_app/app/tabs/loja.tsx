@@ -2,6 +2,7 @@ import { View, Text, FlatList, Image,TouchableOpacity, StyleSheet, TextInput } f
 import { Stack,} from "expo-router";
 import { useCart } from "@/types/cartContent";
 import {useState} from 'react';
+import { Feather } from "@expo/vector-icons";
 
 
 export default function LojaScreen(){
@@ -27,7 +28,7 @@ export default function LojaScreen(){
          keyExtractor={item => String(item.id)}
          renderItem={({ item }) => (
           <View style={styles.card}>
-            <Image source={item.image} style={styles.img} />
+            <Image source={{ uri: item.imgUrl }} style={styles.img} />
             <View style={styles.info}>
               <Text style={styles.name}>{item.name}</Text>
               <Text>R$ {item.price.toFixed(2)} x {item.quantity}</Text>
@@ -35,7 +36,7 @@ export default function LojaScreen(){
                 Subtotal: R$ {(item.price * item.quantity).toFixed(2)}
               </Text>
               <TouchableOpacity style={styles.buttonremove} onPress={() => removeFromCart(item.id)}>
-                <Text style={styles.remove}>Remover</Text>
+                <Feather name="trash-2" size={17} color="red" />
               </TouchableOpacity>
             </View>
           </View>                                                               
@@ -63,9 +64,9 @@ const styles = StyleSheet.create({
   info: { marginLeft: 12, justifyContent: "center" },
   name: { fontWeight: "bold", fontSize: 15 },
   subtotal: { color: "#555" },
-  remove: { color: "white", marginTop: 4,textAlign:"center", },
+  remove: { color: "red", marginTop: 4,textAlign:"center", },
   total: { padding: 16, borderTopWidth: 1, borderColor: "#eee",  },
   totalText: { fontSize: 18, fontWeight: "bold", textAlign: "right" },
-  buttonremove:{backgroundColor:"red", borderRadius:10,}
+  
   
 });
