@@ -1,13 +1,12 @@
 from pydantic import BaseModel
 
 class ProductCreate(BaseModel):
-    id: int
     name: str
     price: float
     imgUrl: str | None = None
 
 class ProductResponse(BaseModel):
-    id: int
+    id:int
     name: str
     price: float
     imgUrl: str | None = None
